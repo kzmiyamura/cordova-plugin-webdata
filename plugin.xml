@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-webdata" version="0.0.1" >
+  <name>CordovaPluginWebdata</name>
+  <description>CordovaPluginWebdata</description>
+  <author>Kazuki Miyamura</author>
+  <license>MIT</license>
+  <engines>
+    <engine name="cordova" version=">=6.5.0" />
+  </engines>
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CordovaPluginWebdata">
+        <param name="android-package" value="com.sanofarm.plugin.webdata"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/CordovaPluginWebdata.java" target-dir="src/com/sanofarm/plugin" />
+  </platform>
+</plugin>
