@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-webdata" version="0.0.1" >
-  <name>CordovaPluginWebdata</name>
-  <description>CordovaPluginWebdata</description>
+<!-- id: プラグインの識別子、version: プラグインのバージョン -->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-webdata"
+  version="1.0.0">
+
+  <!-- プラグイン名 -->
+  <name>WebData</name>
+  <!-- プラグインの説明 -->
+  <description>To get web data (html)</description>
+  <!-- 作者 -->
   <author>Kazuki Miyamura</author>
-  <license>MIT</license>
+  <!-- キーワード -->
+  <keywords>web data</keywords>
+  <!-- ライセンス -->
+  <license>MIT License</license>
+  <!-- プラグインがサポートするCordovaのバージョン -->
   <engines>
-    <engine name="cordova" version=">=6.5.0" />
+    <engine name="cordova-android" version=">5.0.0"/>
   </engines>
-  <!-- android -->
+  <!-- JSの場所指定。name: モジュール名 -->
+  <js-module src="www/webdata.js" name="webdata">
+    <clobbers target="webdata"/>
+  </js-module>
+
+  <!-- Android用の設定 -->
   <platform name="android">
+    <!-- Androidのconfig.xmlはここ→project/platform/android/res/xml/config.xmlにあるのでそこに反映するように -->
     <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="CordovaPluginWebdata">
-        <param name="android-package" value="com.sanofarm.plugin.webdata"/>
+      <!-- Cordovaはfeatureタグをみて、どのプラグインが有効か見る。以下の情報が上記のファイルに追加される。 -->
+      <feature name="webdata">
+        <param name="android-package" value="com.plugin.webdata.WebData"/>
       </feature>
     </config-file>
-    <source-file src="src/android/CordovaPluginWebdata.java" target-dir="src/com/sanofarm/plugin" />
+    <!-- Javaのソースファイル。 target-dir: ファイルがコンパイルされるべき場所 -->
+    <!-- 以下だとproject/platform/android/src/plugin/webdata/以下になる -->
+    <source-file src="src/android/webdata.java" target-dir="src/plugin/webdata/"/>
   </platform>
 </plugin>
