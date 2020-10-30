@@ -1,7 +1,9 @@
 package com.example.plugin;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.cordova.*;
@@ -11,7 +13,7 @@ import org.json.JSONException;
 public class WebData extends CordovaPlugin {
 
     @Override
-    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException, IOException {
 
         if (action.equals("get")) {
             String str = data.getString(0);//"http://www.google.co.jp/"
