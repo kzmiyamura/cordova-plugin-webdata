@@ -1,5 +1,9 @@
 package com.example.plugin;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
 import org.apache.cordova.*;
 import org.json.JSONArray;
 import org.json.JSONException;
