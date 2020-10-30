@@ -1,0 +1,32 @@
+{
+  "name": "cordova-plugin-webdata",
+  "version": "0.1.0",
+  "description": "To get web data for a new cordova plugin",
+  "cordova": {
+    "id": "cordova-plugin-webdata",
+    "platforms": [
+      "android",
+      "ios",
+      "wp7"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kzmiyamura/cordova-plugin-webdata"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "web",
+    "url",
+    "data",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Kazuki Miyamura",
+  "license": "Apache-2",
+  "bugs": {
+    "url": "https://github.com/kzmiyamura/cordova-plugin-webdata/issues"
+  },
+  "homepage": "https://github.com/kzmiyamura/cordova-plugin-webdata#readme"
+}

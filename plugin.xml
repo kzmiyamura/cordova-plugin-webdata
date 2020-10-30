@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.webdata"
+        version="0.7.0">
+
+  <name>WebData</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/WebData.js" target="js/WebData.js"/>
+
+  <js-module src="www/WebData.js" name="WebData">
+    <clobbers target="WebData" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="WebData">
+        <param name="android-package" value="com.example.plugin.WebData"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/WebData.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="WebData">
+        <param name="ios-package" value="HWPWebData" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPWebData.h" target-dir="WebDataPlugin"/>
+    <source-file src="src/ios/HWPWebData.m" target-dir="WebDataPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/WebData.cs"/>
+  </platform>
+
+</plugin>
