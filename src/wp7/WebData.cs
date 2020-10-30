@@ -6,7 +6,7 @@ namespace Cordova.Extension.Commands
 {
     public class Hello : BaseCommand
     {
-        public void greet(string args)
+        public void get(string args)
         {
             string name = JsonHelper.Deserialize<string>(args);
             string message = "Hello, " + name;

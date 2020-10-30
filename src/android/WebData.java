@@ -9,11 +9,21 @@ public class WebData extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("greet")) {
+        if (action.equals("get")) {
+            String str = data.getString(0);//"http://www.google.co.jp/"
 
-            String name = data.getString(0);
-            String message = "Hello, " + name;
-            callbackContext.success(message);
+            URL url = new URL(str);
+            BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+            String input;
+            StringBuffer stringBuffer = new StringBuffer();
+            while ((input = in.readLine()) != null)
+            {
+                stringBuffer.append(input);
+            }
+            in.close();
+            String htmlData = stringBuffer.toString();
+
+            callbackContext.success(htmlData);
 
             return true;
 
