@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 
-@interface HWPHello : CDVPlugin
+@interface HWPWebData : CDVPlugin
 
 - (void) get:(CDVInvokedUrlCommand*)command;
 

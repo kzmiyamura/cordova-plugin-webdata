@@ -1,12 +1,12 @@
-#import "HWPHello.h"
+#import "HWPWebData.h"
 
-@implementation HWPHello
+@implementation HWPWebData
 
 - (void)get:(CDVInvokedUrlCommand*)command
 {
 
     NSString* name = [[command arguments] objectAtIndex:0];
-    NSString* msg = [NSString stringWithFormat: @"Hello, %@", name];
+    NSString* msg = [NSString stringWithFormat: @"WebData, %@", name];
 
     CDVPluginResult* result = [CDVPluginResult
                                resultWithStatus:CDVCommandStatus_OK
